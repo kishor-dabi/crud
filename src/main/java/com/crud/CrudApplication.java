@@ -6,10 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 
 //@EnableAutoConfiguration(exclude = {JndiConnectionFactoryAutoConfiguration.class,DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class,JpaRepositoriesAutoConfiguration.class,DataSourceTransactionManagerAutoConfiguration.class})
-
+//
 @ServletComponentScan
-@SpringBootApplication(scanBasePackages={
-"com.crud.crud.controller", "com.crud.service"})
+@SpringBootApplication(scanBasePackages= {"com.crud.service","com.crud.controller"})
 
 public class CrudApplication {
 

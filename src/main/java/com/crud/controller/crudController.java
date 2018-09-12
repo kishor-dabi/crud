@@ -1,4 +1,4 @@
-package com.crud.crud.controller;
+package com.crud.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,17 +12,16 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.crud.Model.User;
-import com.crud.service.UserService;
+import com.crud.service.UserRepo;
 
 
 @RestController
 public class crudController {
 
-//	@Autowired
-	private UserService userService;  
+	@Autowired
+	private UserRepo userService;  
 	
 	@GetMapping("/user")
-	@ResponseBody
 	private List<User> getUser() {
 		User u = new User( "1", "aman", "abc"); 
 		ArrayList l = new ArrayList();
@@ -34,6 +33,7 @@ public class crudController {
 	
 	@PostMapping("/user")
 	private User saveUser(@RequestBody User user){
+		System.out.println(user +" -----------user");
 		User user2 = userService.save(user);
 		return user2;
 	}
